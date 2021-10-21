@@ -7,21 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Components</title>
     <style>
-        div {
-            border: 2px solid orange;
+        * {
+            box-sizing: border-box;
         }
+
+        /* Setting a primary color to our application that will be used with css variables */
+        html {
+            --color-primary: #a4e6fc;
+            font-family: sans-serif;
+        }
+
+        /* div {
+            border: 2px solid orange;
+        } */
+
+        .highlight {
+            /* background-color: rgb(228, 215, 196); */
+            /* stilling in light-dom overwrittes stylling in shadow-dom */
+            /* border-bottom: 2px solid blue; */
+        }
+
+        /* Styling the component */
+        /* cfl-tooltip {
+            border: 1px solid blue;
+            padding: 0.15rem;
+        } */
     </style>
     <script src="tooltip.js"></script>
+    <script src="confirm-link.js"></script>
 </head>
 
 <body>
     <p>
-        <cfl-tooltip text="Web Components is a set of standards.">Web Components</cfl-tooltip> are awesome!
+        <cfl-tooltip class="important" text="Web Components is a set of standards.">
+            <span class="highlight">Web Components</span>
+        </cfl-tooltip> are awesome!
     </p>
-    <p>
-        <cfl-tooltip></cfl-tooltip>
-    </p>
-    <div>This does not get the component styles!</div>
+    <cfl-tooltip></cfl-tooltip>
+    <!-- <div>This does not get the component styles!</div> -->
+    <a is="cfl-confirm-link" href="https://www.google.com">Google</a>
 </body>
 
 </html>
